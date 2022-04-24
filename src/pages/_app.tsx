@@ -4,18 +4,16 @@ import { appWithTranslation } from 'next-i18next'
 import { NextPage } from 'next'
 import { debounce as _debounce } from 'lodash'
 import Head from 'next/head'
-import { AuthContextProvider } from 'context/auth'
 
 import 'antd/dist/antd.css'
 import './globals.scss'
-import { CursorContextProvider } from 'context/cursor'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactElement
 }
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
+  Component: NextPageWithLayout | any
 }
 
 const App = ({ Component, pageProps: { ...pageProps } }: AppPropsWithLayout) => {
@@ -35,12 +33,10 @@ const App = ({ Component, pageProps: { ...pageProps } }: AppPropsWithLayout) => 
   return (
     <>
       <Head>
-        <title>NFT</title>
+        <title>Deep sea</title>
       </Head>
 
-      <AuthContextProvider>
-        <CursorContextProvider>{getLayout(<Component {...pageProps} />)}</CursorContextProvider>
-      </AuthContextProvider>
+      {getLayout(<Component {...pageProps} />)}
     </>
   )
 }

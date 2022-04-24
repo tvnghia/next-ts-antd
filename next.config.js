@@ -16,6 +16,6 @@ module.exports = {
     STORAGE_URI: process.env.STORAGE_URI,
   },
   images: {
-    domains: ['s3.hlk-demo.online'],
+    // domains: ['s3.hlk-demo.online'],
   },
 }
