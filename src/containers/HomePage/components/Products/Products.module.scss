@@ -1,0 +1,21 @@
+@import 'styles';
+
+.tabWrapper {
+  position: relative;
+
+  :global {
+    .ant-tabs-nav .ant-tabs-nav-wrap {
+      order: 1;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .ant-tabs-top > .ant-tabs-nav {
+      margin-bottom: 64px;
+    }
+  }
+
+  h2.headline {
+    font-size: 48px;
+  }
+}
